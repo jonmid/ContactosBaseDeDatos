@@ -45,4 +45,6 @@ public class ContactsActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SearchContactActivity.class);
         startActivity(intent);
     }
+
+
 }
