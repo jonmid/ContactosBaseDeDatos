@@ -1,6 +1,7 @@
 package com.example.jonmid.contactosbasededatos.Views;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.jonmid.contactosbasededatos.ContactsActivity;
 import com.example.jonmid.contactosbasededatos.Helpers.SqliteHelper;
 import com.example.jonmid.contactosbasededatos.R;
 import com.example.jonmid.contactosbasededatos.Utilities.Constants;
@@ -62,6 +64,7 @@ public class RegisterContactActivity extends AppCompatActivity {
         textInputEditTextPhone.setText("");
         textInputEditTextEmail.setText("");
 
-        Toast.makeText(this, "El contacto se registro correctamente", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ContactsActivity.class);
+        startActivity(intent);
     }
 }

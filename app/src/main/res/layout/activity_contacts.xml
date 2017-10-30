@@ -11,11 +11,34 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:background="#CEEBF2"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/id_et_search_index"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingresar telefono"
+                android:layout_weight="1"/>
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Buscar"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/id_rv_contacts"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="68dp">
+            android:layout_marginBottom="68dp"
+            android:layout_marginTop="70dp">
         </android.support.v7.widget.RecyclerView>
 
         <LinearLayout
