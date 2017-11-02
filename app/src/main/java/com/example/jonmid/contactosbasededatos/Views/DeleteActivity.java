@@ -46,8 +46,8 @@ public class DeleteActivity extends AppCompatActivity {
 
     public void onClickDeleteContact(View view){
         SQLiteDatabase db = sqliteHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("delete from users where id = 1", null);
-        cursor.close();
+
+        db.execSQL("delete from users where id = 1");
 
         Toast.makeText(this, "Contacto eliminado correctamente", Toast.LENGTH_SHORT).show();
 
