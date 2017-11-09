@@ -21,6 +21,8 @@ public class DeleteActivity extends AppCompatActivity {
     TextView textViewEmail;
     SqliteHelper sqliteHelper;
 
+    Integer idContact;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,8 @@ public class DeleteActivity extends AppCompatActivity {
         textViewEmail = (TextView) findViewById(R.id.id_tv_delete_email);
 
         sqliteHelper = new SqliteHelper(this, "db_contacts", null, 1);
+
+        idContact = Integer.parseInt(getIntent().getExtras().getString("id"));
 
         textViewId.setText( getIntent().getExtras().getString("id") );
         textViewName.setText( getIntent().getExtras().getString("name") );
@@ -47,9 +51,9 @@ public class DeleteActivity extends AppCompatActivity {
     public void onClickDeleteContact(View view){
         SQLiteDatabase db = sqliteHelper.getReadableDatabase();
 
-        db.execSQL("delete from users where id = 1");
+        db.execSQL("delete from users where id = "+idContact);
 
-        Toast.makeText(this, "Contacto eliminado correctamente", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Contacto fue eliminado correctamente", Toast.LENGTH_SHORT).show();
 
         onClickCancelDelete(view);
     }
